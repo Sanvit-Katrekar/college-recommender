@@ -3,8 +3,8 @@
 A simple app the recommends colleges based on a given song (title + artist)
 
 
-## Our Project
-
+## Our Project (https://college-recommender.glitch.me/)
+Youtube link: https://youtu.be/cwyVmKzDhnc
 On the front-end,
 
 - `public/index.html` contains the content of the webpage
@@ -17,7 +17,7 @@ On the back-end,
 - all frameworks and packages are added in `package.json`
 - app secrets are stored in `.env` 
 
-## Made by [Glitch](https://glitch.com/)
+## Made by Team Postmen, using [Glitch](https://glitch.com/)
 
 **Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
 
