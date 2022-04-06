@@ -1,0 +1,129 @@
+<!-- Static file served from routes in server.js-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A college recommendation app" />
+
+    <title>College Recommender</title>
+
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://cdn.glitch.global/49dece5a-0274-41fa-a63a-d633aa329211/logo.png?v=1649165667533"
+      type="image/x-icon"
+    />
+    <!-- import the webpage's stylesheet (style.css) -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- Include Handlebars from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <!-- Include axios from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- import the webpage's client-side javascript file (script.js) -->
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <main id="main-content" class="box-1">
+        <h1>Discover the right college for you!</h1>
+        <br /><br />
+        <div id="img">
+          <img
+            src="https://cdn.glitch.global/49dece5a-0274-41fa-a63a-d633aa329211/logo.png?v=1649166170106"
+            width="500"
+            height="300"
+            class="center"
+          />
+        </div>
+        <br /><br />
+        <div class="box">
+          <!--Text type input required from user    -->
+          <form onsubmit="submitForm(event)" class="form-1">
+            <h2>Enter your preferred college requirements</h2>
+            <br />
+            <br />
+            <input type="text" name="city" placeholder="Enter name of city" />
+            <br />
+            <br />
+            <label>Test Requirements:&emsp;</label>
+            <br /><br />
+            <div>
+              <input type="checkbox" id="colreq" name="required" value="required" />Required
+              <br /><br />
+              <input type="checkbox" id="colopt" name="optional" value="optional" />Optional
+              <br /><br />
+              <input
+                type="checkbox"
+                     id="colrec"
+                name="recommended"
+                value="recommended"
+              />Recommended <br /><br />
+              <input type="checkbox" id="colacc" name="accepted" value="accepted" />Accepted
+              <br /><br />
+            </div>
+
+            <input type="text" name="fees" placeholder="Enter Fees" />
+            <br /><br />
+            <input
+              type="text"
+              name="admissionrate"
+              placeholder="Enter Admission Rate"
+            />
+            <br /><br />
+            <input
+              type="text"
+              name="testrequirements"
+              placeholder="Enter Test Requirements"
+            />
+            <br><br>
+            <div>
+              <input
+                type="text"
+                list="courses"
+                placeholder="Select program level"
+              />
+              <datalist id="courses">
+                <option
+                  value="Undergraduate Certificate or Diploma"
+                ></option>
+                <option value="Associate's Degree"></option>
+                <option value="Bachelor’s Degree"></option>
+                <option value="Post-baccalaureate Certificate"></option>
+                <option value="Master's Degree" ></option>
+                <option value="Doctoral Degree" ></option>
+                <option value="First Professional Degree" ></option>
+                <option value="Graduate/Professional Certificate" ></option>
+                
+                
+                
+              </datalist>
+            </div>
+            <br /><br />
+            <input
+              type="submit"
+              id="submitButton"
+              value="Get recommendations!"
+            />
+          </form>
+        </div>
+
+        <div id="recommendations-output"></div>
+      </main>
+    </div>
+
+    <!-- start Glitch promo stuff :)  -->
+    <footer>Made with <a href="https://glitch.com">Glitch</a>!</footer>
+    <div
+      class="glitchButton"
+      style="position: fixed; top: 2em; right: 20px"
+    ></div>
+    <!-- Fancy Glitch menu button  -->
+    <script src="https://button.glitch.me/button.js" defer></script>
+    <!-- end Glitch promo stuff :)  -->
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>POSTMEN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./postmen.css" />
+    <!-- import the webpage's client-side javascript file (script.js) -->
+    <script src="./redirect.js" defer></script>
+  </head>
+  <header>
+    <h1 class="name">POSTMEN</h1>
+    <ul class="tabs" id="tab">
+      <li class="about"><a href="#about">ABOUT</a></li>
+      <li ><a href="#contact">CONTACT US</a></li> <!--provides link to jump directly to contact us-->
+    </ul>
+  </header>
+  <body>
+    <div class="page" id="profile"> 
+      <div class="profile">
+        <div class="personal">
+          <h1>Welcome To</h1>
+          <h1>COLLEGE DECIDER</h1>
+          <h3>
+            The Right Place to begin your CAREER PATH
+          </h3>
+          <!-- This button will take you to the survey page   -->
+          <button id="redirect-button"> TAKE SURVEY </button>
+          <script type="text/javascript"> document.getElementById("redirect-button").onclick =  () => {
+              location.href = "index2.html";
+            };
+</script>
+        </div>
+        <img
+          src="https://cdn.glitch.global/49dece5a-0274-41fa-a63a-d633aa329211/thumbnails%2Flogo.jpg?1649256210879"
+          width="500px"
+          height="500px"
+          class="profilePic"
+        />
+      </div>
+      <div class="about" id="about">
+        <h1>ABOUT</h1>
+      </div>
+      <div class="para" id="para">
+          <p><em><strong>AIM:</strong></em> Decider helps high school students decide on the best 
+            college based on their own choices and parameters, saving hours 
+            of mechanical work and eventually landing them in their dream universities for free.
+            We aim to assist students globally in this crucial phase of their lives by 
+            decreasing their burden and giving them greater time to spend on their admission 
+            process in other domains such as Essay writing, tests etc with our free to use and 
+            interactive platform.
+          </p>
+          <p><em><strong>Who we are?</strong></em> 
+            We at Postmen, a student-led community-driven group, have felt the lack of a centralized and free portal that would have tailor-made results for each student, having been in similar situations during our university application phase.
+          </p>
+      </div>
+      <div class="contact-1" id="contact-1">
+        <h1>CONTACT US</h1>    
+      <div class="contact" id="contact">
+        <h2>Get in touch with us</h2>
+
+        <div class="contactForm">
+          <form action="http://localhost:3000/" method="GET">
+            <label for="name">Name</label>
+            <input
+              type="text"    
+              id="name"
+              name="senderName"
+              placeholder="Enter Your Name"
+              class="input-field"
+              required
+            /> 
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="senderEmail"
+              placeholder="Enter Your Email"
+              class="input-field"
+              required
+            /> <!-- All three boxes requiring text input   -->
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              cols="60"
+              rows="5"
+              placeholder="Enter Your Message"
+              name="message"
+              class="input-field"
+              required
+            ></textarea>
+            <input
+              type="submit"
+              value="Submit"
+              id="submit-btn"
+              class="submit-btn"
+            />
+          </form>
+        </div>
+        </div>
+      </div> 
+    </div>
+  </body>
+</html>
