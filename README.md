@@ -1,6 +1,6 @@
 # College Recommender
 
-A simple app the recommends colleges based on a given song (title + artist)
+A simple app the recommends colleges based on student requirements
 
 
 ## Our Project (https://college-recommender.glitch.me/)
