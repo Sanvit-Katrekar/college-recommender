@@ -9,13 +9,12 @@ const getRecommendations = async (http, { city, fees, admissionrate, testrequire
   const mappings = {
     city: [city ? "school.city" : "", city],
     fees: [fees ? "cost.tuition.out_of_state" : "", fees],
-    admissionrate: [admissionrate ? "admissions.admission_rate.overall" : "", admissionrate],
     testrequirements: [testrequirements ? "admissions.test_requirements" : "", testrequirements]
   }
 
   Object.entries(mappings).forEach((entry) => {
     const [key, value] = entry;
-    apiRequest += `&${value[0]}=${value[1]}`
+    apiRequest += `&${value[0]}=${value[1].replace(/, /g, ",")}`
   });
   
   //Adding the api key
@@ -28,18 +27,22 @@ const getRecommendations = async (http, { city, fees, admissionrate, testrequire
   };
   
   let result = await http(config).then((response) => response.data)
+  
   let collegeUrl
-  //let images = []
+  
+  const testreqs = ["Required", "Optional", "Recommended", "Accepted"]
+  
   for (let i = 0; i < result.results.length; i++) {
     console.log("College website: >>")
     collegeUrl = `${result.results[i].latest.school.school_url}`
     if (!collegeUrl.startsWith("http")) {
-      collegeUrl = 'http://' + collegeUrl
+      collegeUrl = 'https://' + collegeUrl
     }
     console.log(collegeUrl)
     var images = await getImages(collegeUrl)
     result.results[i].images = [...images]
-    console.log("New images: (Should not be an empty array)")
+    var testreq = result.results[i].latest.admissions.test_requirements
+    result.results[i].latest.admissions.test_requirements = testreqs[testreq - 1]
     console.log(result.results[i].images)
   }
   console.log(result)

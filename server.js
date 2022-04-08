@@ -9,11 +9,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/public/postmen.html");
-});
-
-app.get("/home", (req, res) => {
-  res.sendFile(__dirname + "/public/index2.html");
+  res.sendFile(__dirname + "/public/home.html");
+  //res.sendFile(__dirname + "/public/main.html");
 });
 
 app.post("/recommendations", async (req, res) => {
@@ -21,11 +18,11 @@ app.post("/recommendations", async (req, res) => {
   if (!req.body) {
     return res.status(400).send({ message: "Bad request! Must provide a body" })
   }
-  const { city, fees, admissionrate, testrequirements } = req.body
+  const { city, fees, testrequirements } = req.body
   
   
   try {
-    const recommendations = await getRecommendations(axios, { city, fees, admissionrate, testrequirements })
+    const recommendations = await getRecommendations(axios, { city, fees, testrequirements })
     if (!recommendations.metadata.total) {
       return res.status(404).send({ message: "No recommendations found!" })
     }

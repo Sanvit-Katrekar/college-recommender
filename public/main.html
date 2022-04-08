@@ -18,11 +18,20 @@
     <!-- import the webpage's stylesheet (style.css) -->
     <link rel="stylesheet" href="/style.css" />
 
+    <!-- Import the alertify css from a CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.rtl.min.css"
+    />
+
     <!-- Include Handlebars from a CDN -->
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
     <!-- Include axios from a CDN -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Include alertify from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
     <!-- import the webpage's client-side javascript file (script.js) -->
     <script src="./script.js" defer></script>
@@ -53,34 +62,40 @@
             <label>Test Requirements:&emsp;</label>
             <br /><br />
             <div>
-              <input type="checkbox" id="colreq" name="required" value="required" />Required
-              <br /><br />
-              <input type="checkbox" id="colopt" name="optional" value="optional" />Optional
-              <br /><br />
               <input
                 type="checkbox"
-                     id="colrec"
+                id="colreq"
+                name="required"
+                value="required"
+              />Required <br /><br />
+              <input
+                type="checkbox"
+                id="colopt"
+                name="optional"
+                value="optional"
+              />Optional <br /><br />
+              <input
+                type="checkbox"
+                id="colrec"
                 name="recommended"
                 value="recommended"
               />Recommended <br /><br />
-              <input type="checkbox" id="colacc" name="accepted" value="accepted" />Accepted
-              <br /><br />
+              <input
+                type="checkbox"
+                id="colacc"
+                name="accepted"
+                value="accepted"
+              />Accepted <br /><br />
             </div>
 
             <input type="text" name="fees" placeholder="Enter Fees" />
             <br /><br />
             <input
               type="text"
-              name="admissionrate"
-              placeholder="Enter Admission Rate"
+              name="programs"
+              placeholder="Enter your desired program"
             />
             <br /><br />
-            <input
-              type="text"
-              name="testrequirements"
-              placeholder="Enter Test Requirements"
-            />
-            <br><br>
             <div>
               <input
                 type="text"
@@ -88,19 +103,14 @@
                 placeholder="Select program level"
               />
               <datalist id="courses">
-                <option
-                  value="Undergraduate Certificate or Diploma"
-                ></option>
+                <option value="Undergraduate Certificate or Diploma"></option>
                 <option value="Associate's Degree"></option>
                 <option value="Bachelor’s Degree"></option>
                 <option value="Post-baccalaureate Certificate"></option>
-                <option value="Master's Degree" ></option>
-                <option value="Doctoral Degree" ></option>
-                <option value="First Professional Degree" ></option>
-                <option value="Graduate/Professional Certificate" ></option>
-                
-                
-                
+                <option value="Master's Degree"></option>
+                <option value="Doctoral Degree"></option>
+                <option value="First Professional Degree"></option>
+                <option value="Graduate/Professional Certificate"></option>
               </datalist>
             </div>
             <br /><br />

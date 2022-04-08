@@ -4,8 +4,6 @@
     <title>POSTMEN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./postmen.css" />
-    <!-- import the webpage's client-side javascript file (script.js) -->
-    <script src="./redirect.js" defer></script>
   </head>
   <header>
     <h1 class="name">POSTMEN</h1>
@@ -26,7 +24,7 @@
           <!-- This button will take you to the survey page   -->
           <button id="redirect-button"> TAKE SURVEY </button>
           <script type="text/javascript"> document.getElementById("redirect-button").onclick =  () => {
-              location.href = "index2.html";
+              location.href = "main.html";
             };
 </script>
         </div>
@@ -59,7 +57,7 @@
         <h2>Get in touch with us</h2>
 
         <div class="contactForm">
-          <form action="http://localhost:3000/" method="GET">
+          <form>
             <label for="name">Name</label>
             <input
               type="text"    
